@@ -9,4 +9,4 @@ Route::get('/', function () {
 });
 
 Route::get('/', [InvestmentController::class, 'index']);
-Route::post('/calculate', [InvestmentController::class, 'calculate'])->name('calculate');
+Route::post('/fd-calculator', [InvestmentController::class, 'fdCalculator'])->name('fdCalculator');

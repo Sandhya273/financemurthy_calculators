@@ -8,10 +8,10 @@ class InvestmentController extends Controller
 {
     public function index()
     {
-        return view('investment');
+        return view('fd');
     }
 
-    public function calculate(Request $request)
+    public function fdCalculator(Request $request)
     {
         $request->validate([
             'investment' => 'required|numeric|min:0',
@@ -26,7 +26,7 @@ class InvestmentController extends Controller
         $simpleInterest = ($investment * $rate * $time) / 100;
         $totalAmount = $investment + $simpleInterest;
 
-        return view('investment', compact('simpleInterest', 'totalAmount', 'investment', 'rate', 'time'));
+        return view('fd', compact('simpleInterest', 'totalAmount', 'investment', 'rate', 'time'));
     }
 
 }
